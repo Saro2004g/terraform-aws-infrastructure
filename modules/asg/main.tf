@@ -4,9 +4,7 @@ resource "aws_autoscaling_group" "web_asg" {
   min_size         = 1
   max_size         = 3
 
-  vpc_zone_identifier = [
-    var.subnet_id
-  ]
+  vpc_zone_identifier = var.subnet_ids
 
   launch_template {
     id      = var.launch_template_id
